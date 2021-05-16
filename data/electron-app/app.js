@@ -12,7 +12,7 @@ function parseJson(data) {
 
 function parseInfo(data) {
     return data.replace('\n', '').replace(/<(.+?)>/gms, ';;').split(';;').map((item) => {
-        let newItem = item.replace(/\s\s+/g, ' ');
+        let newItem = item.replace(/\s\s+/g, ' ').replace('&quot;', '\\"').replace('&quot', '\\"');
         return newItem.trim();
     });
 }
