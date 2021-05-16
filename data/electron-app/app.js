@@ -12,7 +12,10 @@ function parseJson(data) {
 
 function parseInfo(data) {
     return data.replace('\n', '').replace(/<(.+?)>/gms, ';;').split(';;').map((item) => {
-        let newItem = item.replace(/\s\s+/g, ' ').replace('&quot;', '\\"').replace('&quot', '\\"');
+        let newItem = item.replace(/\s\s+/g, ' ')
+            .replaceAll('&quot;', '"')
+            .replaceAll('&quot', '"')
+            .replaceAll(';', '');
         return newItem.trim();
     });
 }
@@ -73,7 +76,7 @@ function drawRoute(map, lines) {
         path: lines,
         geodesic: true,
         strokeColor: "#ff0000",
-        strokeOpacity: 0.5,
+        strokeOpacity: 0.2,
         strokeWeight: 2,
     });
     route.setMap(map);
