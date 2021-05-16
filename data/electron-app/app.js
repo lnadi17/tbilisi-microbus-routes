@@ -15,6 +15,7 @@ function parseInfo(data) {
         let newItem = item.replace(/\s\s+/g, ' ')
             .replaceAll('&quot;', '"')
             .replaceAll('&quot', '"')
+            .replaceAll('&rdquo', '"')
             .replaceAll(';', '');
         return newItem.trim();
     });
