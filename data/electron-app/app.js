@@ -13,9 +13,10 @@ function parseJson(data) {
 function parseInfo(data) {
     return data.replace('\n', '').replace(/<(.+?)>/gms, ';;').split(';;').map((item) => {
         let newItem = item.replace(/\s\s+/g, ' ')
-            .replaceAll('&quot;', '"')
-            .replaceAll('&quot', '"')
-            .replaceAll('&rdquo', '"')
+            .replaceAll('&quot;', '"').replaceAll('&quot', '"')
+            .replaceAll('&rdquo;', '"').replaceAll('&rdquo', '"')
+            .replaceAll('&ldquo;', '"').replaceAll('&ldquo', '"')
+            .replaceAll('&bdquo;', '"').replaceAll('&bdquo', '"')
             .replaceAll(';', '');
         return newItem.trim();
     });
