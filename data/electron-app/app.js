@@ -1,5 +1,5 @@
 const fs = require('fs');
-const jsonic = require('../node_modules/jsonic');
+const jsonic = require('jsonic');
 
 function parseJson(data) {
     let firstPart = data.split('{').slice(1).join('{');
